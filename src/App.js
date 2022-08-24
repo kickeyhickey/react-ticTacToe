@@ -24,7 +24,7 @@ export default class App extends Component {
     }
   }
 }
-
+// rabble
   setPlayer = (player) => {
     this.setState( { player: player})
   }
