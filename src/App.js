@@ -15,7 +15,7 @@ export default class App extends Component {
   handleClick(id) {
     if( this.state.player && !this.state.winner) {
     let letterBoard = this.state.board
-    let newPlayer = this.state.player === "x" ? "o" : "x" 
+    let newPlayer = this.state.player === "X" ? "O" : "X" 
     if (this.state.board[id] === null && !this.state.winner) {
     letterBoard[id] = this.state.player
    this.setState({ board: letterBoard, player: newPlayer})
@@ -55,7 +55,7 @@ export default class App extends Component {
        <div className='container'>
          <h1>Tic Tac Tow App</h1>
          <h2>Call for Action</h2>
-         <ChoosePlayer setPlayer={this.setPlayer} />
+         {this.state.player ? <h2>Next player is {this.state.player}</h2> : <ChoosePlayer setPlayer={this.setPlayer} />}
          <div className='board'>
           {this.state.board.map((box, id) => {
             return (
